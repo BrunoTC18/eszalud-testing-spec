@@ -61,4 +61,20 @@ class DoctorTest {
                 )
         );
     }
+
+    @Test
+    @DisplayName("Rechazar la creación de un doctor sin apellidos")
+    void shouldRejectDoctorWithoutLastName() {
+
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> new Doctor(
+                        "40123456",
+                        "Carlos",
+                        null,
+                        "CMP-12345",
+                        "ESP-001"
+                )
+        );
+    }
 }
