@@ -110,4 +110,6 @@ class DoctorTest {
         assertEquals("Marta", doctor.getNombres());
         assertEquals("Torres", doctor.getApellidos());
         assertEquals("CMP-67890", doctor.getColegiatura());
-        assertEquals("ESP-002",
+        assertEquals("ESP-002",doctor.getEspecialidad());
+    }
+}
