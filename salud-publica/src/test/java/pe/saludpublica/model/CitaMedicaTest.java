@@ -103,4 +103,20 @@ class CitaMedicaTest {
                 )
         );
     }
+
+    @Test
+    @DisplayName("Asignar el estado PROGRAMADA cuando la cita se crea sin estado")
+    void shouldAssignScheduledStatusWhenStatusIsNull() {
+
+        CitaMedica cita = new CitaMedica(
+                "PAC-001",
+                "DOC-001",
+                "ESP-001",
+                LocalDateTime.of(2026, 12, 1, 10, 30),
+                "Control general",
+                null
+        );
+
+        assertEquals(EstadoCita.PROGRAMADA, cita.getEstado());
+    }
 }
