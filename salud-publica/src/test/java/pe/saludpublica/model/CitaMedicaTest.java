@@ -86,4 +86,21 @@ class CitaMedicaTest {
                 )
         );
     }
+
+    @Test
+    @DisplayName("Rechazar la creación de una cita sin fecha y hora")
+    void shouldRejectAppointmentWithoutDateTime() {
+
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> new CitaMedica(
+                        "PAC-001",
+                        "DOC-001",
+                        "ESP-001",
+                        null,
+                        "Control general",
+                        EstadoCita.PROGRAMADA
+                )
+        );
+    }
 }
