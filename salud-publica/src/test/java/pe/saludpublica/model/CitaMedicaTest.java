@@ -52,4 +52,21 @@ class CitaMedicaTest {
                 )
         );
     }
+
+    @Test
+    @DisplayName("Rechazar la creación de una cita sin identificador de doctor")
+    void shouldRejectAppointmentWithoutDoctor() {
+
+        assertThrows(
+                IllegalArgumentException.class,
+                () -> new CitaMedica(
+                        "PAC-001",
+                        null,
+                        "ESP-001",
+                        LocalDateTime.of(2026, 12, 1, 10, 30),
+                        "Control general",
+                        EstadoCita.PROGRAMADA
+                )
+        );
+    }
 }
